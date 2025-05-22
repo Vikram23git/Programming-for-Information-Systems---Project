@@ -1,6 +1,8 @@
 # Programming-for-Information-Systems---Project
 Company Name : The Bookworm
-i have selected "The Bookworm" as the specific organization for this Information System for several key reasons:
+
+Description:
+The key reasons for selecting "The Bookworm" as the specific organization for this Information System are:
 
 Clear Core Business: A bookstore, especially one combined with a cafe, has a very tangible and easily definable core business: managing inventory (books), sales, and potentially customer interactions. 
 
@@ -18,4 +20,17 @@ Customer loyalty programs.
 Staff management.
 Online ordering.
 
+Implementaion Plan :
 
+Frontend (HTML, CSS, JavaScript):
+HTML: Provides the structure for the user interface, including input fields, buttons, and tables to display data.
+CSS: Minimal styling using Tailwind CSS, prioritizing functionality and readability over elaborate aesthetics.
+JavaScript: Handles all user interactions, manipulates the DOM to display data and messages, and acts as the "API client."
+
+Backend API Development:
+Python: we could use frameworks like Flask or Django to create a real backend API. The JavaScript frontend would then make actual HTTP requests (GET, POST, PUT, DELETE) to these Python API endpoints.
+This separates the frontend (what the user sees) from the backend (data storage and business logic), which is a standard and scalable architecture for web applications.
+A Python backend could connect to a database (like PostgreSQL, MySQL, SQLite, or even NoSQL databases like MongoDB). This would ensure that all your book inventory data is saved permanently. Python has excellent libraries for interacting with various databases.
+
+
+Google Maps Link of the Company : #2, 3rd Floor, Prestige Commercial Complex, Church St, #2, 3rd Floor, Pabove Matteo Coffea, Bengaluru, Karnataka 560001
