@@ -33,4 +33,4 @@ This separates the frontend (what the user sees) from the backend (data storage 
 A Python backend could connect to a database (like PostgreSQL, MySQL, SQLite, or even NoSQL databases like MongoDB). This would ensure that all your book inventory data is saved permanently. Python has excellent libraries for interacting with various databases.
 
 
-Google Maps Link of the Company : #2, 3rd Floor, Prestige Commercial Complex, Church St, #2, 3rd Floor, Pabove Matteo Coffea, Bengaluru, Karnataka 560001
+Google Maps Link of the Company : Before, Brigade Gardens, 62, Church Street, BPL building, Bengaluru, Karnataka 560001
