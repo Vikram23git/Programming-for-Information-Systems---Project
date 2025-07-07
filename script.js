@@ -32,3 +32,22 @@ bookForm.onsubmit = function (e) {
     quantity: parseInt(document.getElementById('quantity').value),
     isbn: document.getElementById('isbn').value
   };
+
+  const method = bookId ? 'PUT' : 'POST';
+  const url = bookId ? `/books/${bookId}` : '/books';
+
+  fetch(url, {
+    method,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(book)
+  }).then(() => {
+    bookForm.reset();
+    document.getElementById('bookId').value = '';
+    loadBooks();
+  });
+};
+
+function deletebook(id){
+  fetch(`/books/${id}`, {method:'DELETE'})
+   .then (()) => loadBooks());
+}
