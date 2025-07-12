@@ -51,3 +51,22 @@ function deletebook(id){
   fetch(`/books/${id}`, {method:'DELETE'})
    .then (()) => loadBooks());
 }
+
+function editBook(id) {
+  fetch(`/books`)
+    .then(res => res.json())
+    .then(books => {
+      const book = books.find(b => b.id === id);
+      if (book) {
+        document.getElementById('bookId').value = book.id;
+        document.getElementById('title').value = book.title;
+        document.getElementById('author').value = book.author;
+        document.getElementById('genre').value = book.genre;
+        document.getElementById('price').value = book.price;
+        document.getElementById('quantity').value = book.quantity;
+        document.getElementById('isbn').value = book.isbn;
+      }
+    });
+}
+
+window.onload = loadBooks;
