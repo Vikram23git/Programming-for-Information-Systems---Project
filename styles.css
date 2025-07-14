@@ -1,15 +1,15 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;     /*Here the font is set for the page, space around the body is added and background color*/
   margin: 30px;
   background-color: #f7f7f7;
 }
 
 h1{
-  text-align: center;
+  text-align: center;         /*This will center our page heading*/
 }
 
 form {
-  margin-bottom: 20px;
+  margin-bottom: 20px;                       /*This will give White Background behind form and rounded corners and spacing*/
   background: #fff;
   padding: 15px;
   border-radius: 10px;
@@ -17,8 +17,8 @@ form {
 }
 
 input, button {
-  padding: 8px;
-  margin: 5px;
+  padding: 8px;                        
+  margin: 5px;                               /*This will style our input box and buttons*/
   border-radius: 4px;
   bborder: 1px solid #ccc;
 }
@@ -28,4 +28,28 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;           /*This will turn the button dark blue when it is hovered*/
+}
+
+table {
+  width: 100%;                           /*Table will get full width and space between cells are removed*/
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+th,td {
+  border: 1px solid #ddd;             /*Adding border around table cells*/
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+.actions button {                  
+  margin-right: 5px;               /*Adding spaces between buttons inside table row*/  
 }
