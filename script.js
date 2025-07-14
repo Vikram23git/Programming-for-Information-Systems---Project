@@ -1,5 +1,5 @@
 const bookForm = document.getElementById('bookForm');
-const bookList = document.getElementById('bookList');
+const bookList = document.getElementById('listOfBooks');
 
 function loadBooks() {
   fetch('/books')
@@ -7,16 +7,20 @@ function loadBooks() {
     .then(books => {
       bookList.innerHTML = '';
       books.forEach(book => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <strong>${book.title}</strong> by ${book.author} - $${book.price} 
-          [${book.genre}, Qty: ${book.quantity}]<br>ISBN: ${book.isbn}
+        const card = document.createElement('div');
+        card.className = 'book-card';
+        card.innerHTML = `
+          <div class="book-title">${book.title}</div> 
+          <div class="book-meta">by ${book.author}</div>
+          <div class="book-meta">Genre: ${book.genre}</div>
+          <div class="book-meta">Price: $${book.price} | Qty: ${book.quantity}]</div>
+          <div class="book-meta">ISBN: ${book.isbn}</div>
           <div class="actions">
             <button class="edit" onclick="editBook(${book.id})">Edit</button>
             <button onclick="deleteBook(${book.id})">Delete</button>
           </div>
         `;
-        bookList.appendChild(li);
+        bookList.appendChild(card);
       });
     });
 }
@@ -49,7 +53,7 @@ bookForm.onsubmit = function (e) {
 
 function deletebook(id){
   fetch(`/books/${id}`, {method:'DELETE'})
-   .then (()) => loadBooks());
+   .then (() => loadBooks());
 }
 
 function editBook(id) {
@@ -67,6 +71,19 @@ function editBook(id) {
         document.getElementById('isbn').value = book.isbn;
       }
     });
+}
+function filterBooks() {
+  const searchBox = document.getElementById('searchBox').value.toLowerCase();
+  const bookCards = document.querySelectorAll('.book-card');
+  bookCards.forEach(card => {
+    const title = card.querySelector('.book-title').textContent.toLowerCase();
+    const author = card.querySelector('.book-meta').textContent.toLowerCase();
+    if (title.includes(searchBox) || author.includes(searchBox)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  })
 }
 
 window.onload = loadBooks;
