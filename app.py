@@ -1,21 +1,22 @@
 from flask import Flask,jsonify,request,render_template
 import json
+import os
 from flask_cors import CORS
 
-app = Flask (_name_)
+app = Flask (__name__)
 CORS(app)
 
 Books_File = 'books.json'
 
 def read_books():
   try:
-    with OPEN(Books_File,'r') as file:
+    with open(Books_File,'r') as file:
       return json.load(file)
   except FileNotFoundError:
     return []
 
-def write_books():
-  with OPEN(Books_File, 'w') as file:
+def write_books(data):
+  with open(Books_File, 'w') as file:
     return json.dump(data, file, indent=2)
 
 @app.route('/')
@@ -33,7 +34,7 @@ def add_books():
   new_book['id'] = books[-1]['id'] + 1 if books else 1
   books.append(new_book)
   write_books(books)
-  return jsonify({'Text Msg : Book Added Successfully'})
+  return jsonify({'Text Msg' : 'Book Added Successfully'})
 
 @app.route('/books/<int:book_id>',methods=['PUT'])
 def update_books(book_id):
@@ -53,5 +54,5 @@ def delete_book(book_id):
   write_books(books)
   return jsonify({'msg':'Book Deleted'})
 
-if _name_ =='_main_':
+if __name__ =='__main__':
   app.run(debug=True)
