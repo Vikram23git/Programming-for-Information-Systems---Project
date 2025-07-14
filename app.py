@@ -53,4 +53,5 @@ def delete_book(book_id):
   write_books(books)
   return jsonify({'msg':'Book Deleted'})
 
-app.run(debug=True)
+if _name_ =='_main_':
+  app.run(debug=True)
