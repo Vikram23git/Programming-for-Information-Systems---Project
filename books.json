@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "The Hobbit",
-    "author": "J.R.R. Tolkien",
+    "title": "Atomic Habits",
+    "author": "James Clear",
     "genre": "Fantasy",
-    "price": 15.99,
-    "quantity": 5,
-    "isbn": "978-0547928227"
+    "price": 7.99,
+    "quantity": 34,
+    "isbn": "978-1847941831"
   }
 ]
 
