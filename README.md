@@ -1,10 +1,10 @@
 # Programming-for-Information-Systems---Project
-Company Name : The Bookworm
+Company Name : **The Bookhive**
 
 Description:
-The key reasons for selecting "The Bookworm" as the specific organization for this Information System are:
+The key reasons for selecting "The Bookhive" as the specific organization for this Information System are:
 
-Clear Core Business: A bookstore, especially one combined with a cafe, has a very tangible and easily definable core business: managing books, sales, and potentially customer interactions. 
+Clear Core Business: A bookstore, has a very tangible and easily definable core business: managing books, sales, and potentially customer interactions. 
 
 Identifiable Data Entities: The primary data entity is "Book," which has straightforward attributes (Title, Author, ISBN, Stock). This simplicity allows for a clear focus on CRUD operations without getting bogged down in complex data relationships for a proof-of-concept.
 
@@ -18,19 +18,99 @@ Scalability Potential: While this PoC focuses on books, the system could easily 
 Cafe inventory and sales.
 Customer loyalty programs.
 Staff management.
-Online ordering.
 
-Implementaion Plan :
+Implementaion :
 
-Frontend (HTML, CSS, JavaScript):
-HTML: Provides the structure for the user interface, including input fields, buttons, and tables to display data.
-CSS: Minimal styling using Tailwind CSS, prioritizing functionality and readability over elaborate aesthetics.
-JavaScript: Handles all user interactions, manipulates the DOM to display data and messages, and acts as the "API client."
+**Bookstore Information System**
 
-Backend API Development:
-Python: we could use frameworks like Flask or Django to create a real backend API. The JavaScript frontend would then make actual HTTP requests (GET, POST, PUT, DELETE) to these Python API endpoints.
-This separates the frontend (what the user sees) from the backend (data storage and business logic), which is a standard and scalable architecture for web applications.
-A Python backend could connect to a database (like PostgreSQL, MySQL, SQLite, or even NoSQL databases like MongoDB). This would ensure that all your book inventory data is saved permanently. Python has excellent libraries for interacting with various databases.
+A simple full-stack Bookstore Management Web App built with Flask (Python) for the backend and HTML/CSS/JavaScript for the frontend. It allows users to add, view, edit, delete, and search book records, with persistent storage in a JSON file.
+
+**-> Features**
+Add new books with title, author, genre, price, quantity, and ISBN
+
+Update and delete existing books
+
+Search books by title or author (client-side filter)
+
+Simple and clean UI with styled form and book display cards
+
+RESTful API built using Flask
+
+JSON-based data storage
+
+Fully tested with pytest
 
 
-Google Maps Link of the Company : Before, Brigade Gardens, 62, Church Street, BPL building, Bengaluru, Karnataka 560001
+**Requirements**
+
+- Python 3.8+
+- Flask
+- Flask-CORS
+
+
+**programming-for-information-system/**
+│
+├── app.py                # Backend 
+├── books.json            # storage (JSON format)
+├── testing.py            # Pytest unit tests
+│
+├── templates/
+│   └── index.html        # Frontend 
+│
+├── static/
+│   ├── script.js         # JavaScript logic
+│   └── styles.css        # Styling for the app
+│
+└── README.md             # Documentation
+
+**API Documentation**
+Use Base URL with: /
+Method	    Endpoint	          Description
+GET	        /books	            Fetch all books
+POST	      /books	            Add a new book
+PUT	        /books/<int:id>	    Update a book by ID
+DELETE	    /books/<int:id>	    Delete a book by ID
+
+**Project Evolution**
+The development of this Information System has followed an iterative process, starting with frontend scaffolding and gradually integrating backend capabilities. The commits reflect a strong focus on refining core functionalities, enhancing the user interface, and introducing testing procedures.
+
+**Initial Setup & Frontend Foundation:**
+
+Initial commit on May 21 marked the project's beginning.
+
+The core frontend structure was laid out with the creation of index.html and initial styles.css.
+
+Client-side interactivity began with the creation and initial updates of script.js.
+
+An early data storage approach was explored with books.json, suggesting an initial flat-file, in-memory or local storage concept for data.
+
+**Backend Integration & Core Functionality:**
+
+Introduction of the Python Flask backend, marked by the creation and initial development of app.py to make the project a client-server architecture with persistent storage.
+
+Subsequent updates to app.py and script.js (Jul 12) indicate the integration efforts between the new Flask backend and the JavaScript frontend.
+
+**Refinement, CRUD Completion, UI Enhancements & Testing:**
+
+Backend Structure: Adding the missing main method ensured the Flask application was properly runnable.
+
+Database Operations: Adding update books and delete book methods for Completing CRUD operation solidified the full CRUD capabilities for the book entity.
+
+**Frontend Structure & Styling:**
+
+Update index.html and Setting Font,Background,Buttons, Border and Margins indicate initial styling efforts.
+
+linking javascript file confirms the separation of JavaScript into script.js for better code organization.
+
+Adding Search Bar and grid Book section, Styling the Book Grid, and Updating Book card and including filter function for SearchBox to enhance the book display, search, and filtering capabilities.
+
+**Quality Assurance & Testing:**
+
+Correcting Minor type errors and type errors reflect ongoing bug fixing and code refinement.
+
+Book Details suggests a focus on the data integrity and display of book information.
+
+The introduction of a dedicated testing file, Create testing.py, marks a crucial step towards formalizing the testing process. This was followed by tests,I took help from AI because lack of knowledge in testing which indicates the implementation of tests, with assistance sought due to a learning curve in this area.
+
+
+**Google Maps Link of the Company :** The Book Hive,53 London Street, Norwich, NR2 1HL
