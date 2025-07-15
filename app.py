@@ -1,6 +1,5 @@
 from flask import Flask,jsonify,request,render_template
 import json
-import os
 from flask_cors import CORS
 
 app = Flask (__name__)
@@ -23,11 +22,11 @@ def write_books(data):
 def index():
   return render_template('index.html')
 
-@app.route('/books',method=['GET'])
+@app.route('/books',methods=['GET'])
 def get_books():
   return jsonify(read_books())
 
-@app.route('/books',method=['POST'])
+@app.route('/books',methods=['POST'])
 def add_books():
   books = read_books()
   new_book = request.json
