@@ -5,13 +5,13 @@ function loadBooks() {
   fetch('/books')
     .then(res => res.json())
     .then(books => {
-      bookList.innerHTML = '';
+      bookList.innerHTML = '';                                         // Took inputs from AI for creating the "Book Card" 
       books.forEach(book => {
         const card = document.createElement('div');
         card.className = 'book-card';
         card.innerHTML = `
           <div class="book-title">${book.title}</div> 
-          <div class="book-meta">by ${book.author}</div>
+          <div class="book-meta">by ${book.author}</div>                                    
           <div class="book-meta">Genre: ${book.genre}</div>
           <div class="book-meta">Price: $${book.price} | Qty: ${book.quantity}]</div>
           <div class="book-meta">ISBN: ${book.isbn}</div>
@@ -72,9 +72,9 @@ function editBook(id) {
       }
     });
 }
-function filterBooks() {
-  const searchBox = document.getElementById('searchBox').value.toLowerCase();
-  const bookCards = document.querySelectorAll('.book-card');
+function filterBooks() {                                                                   // Made use of AI for adding the search bar function
+  const searchBox = document.getElementById('searchBox').value.toLowerCase();                 
+  const bookCards = document.querySelectorAll('.book-card');                               
   bookCards.forEach(card => {
     const title = card.querySelector('.book-title').textContent.toLowerCase();
     const author = card.querySelector('.book-meta').textContent.toLowerCase();
