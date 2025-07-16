@@ -18,12 +18,12 @@ def write_books(data):
   with open(Books_File, 'w') as file:
     return json.dump(data, file, indent=2)
 
-@app.route('/')
+@app.route('/')                                             # Here Took help of AI to implement Basic RESTfulAPI for getting JSON Data and response
 def index():
   return render_template('index.html')
 
 @app.route('/books',methods=['GET'])
-def get_books():
+def get_books():                          
   return jsonify(read_books())
 
 @app.route('/books',methods=['POST'])
